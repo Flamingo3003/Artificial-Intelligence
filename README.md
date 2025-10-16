@@ -8,13 +8,13 @@ Họ và tên: Tạ Hoàng Đạt
 
 MSSV: 23110090
 
-Lớp: DHTI15A10HN
+Lớp: Tri tue nhan tao_ Nhom 04CLC
 
 Môn học: Trí tuệ nhân tạo
 
 Đề tài: Giải bài toán 8 quân hậu bằng nhiều thuật toán tìm kiếm
 
-Giảng viên hướng dẫn: ThS. [Tên GV nếu có]
+Giảng viên hướng dẫn: TS.Phan Thị Huyền Trang
 
 🎯 Mục tiêu
 
