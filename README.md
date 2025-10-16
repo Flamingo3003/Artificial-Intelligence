@@ -87,3 +87,54 @@ Quan sát quá trình đặt quân hậu.
 
 <img width="1052" height="711" alt="image" src="https://github.com/user-attachments/assets/98434449-1445-4e22-a350-f69f87ef3d9a" />
 
+📊 ĐÁNH GIÁ VÀ SO SÁNH CÁC THUẬT TOÁN
+🔹 1. Nhóm thuật toán tìm kiếm có hệ thống
+Thuật toán	Đặc điểm	Ưu điểm	Nhược điểm
+DFS (Depth-First Search)	Duyệt sâu đến cùng, dùng ngăn xếp	Dễ cài đặt, tốn ít bộ nhớ	Có thể rơi vào nhánh sai, không đảm bảo tìm lời giải tối ưu
+BFS (Breadth-First Search)	Duyệt theo từng tầng, dùng hàng đợi	Tìm được lời giải tối ưu (nếu chi phí bằng nhau)	Rất tốn bộ nhớ do lưu nhiều trạng thái
+UCS (Uniform Cost Search)	Mở rộng trạng thái có chi phí thấp nhất	Đảm bảo tối ưu với chi phí khác nhau	Tốc độ chậm hơn BFS khi nhiều trạng thái
+DLS (Depth-Limited Search)	DFS nhưng giới hạn độ sâu	Tránh duyệt vô hạn	Có thể bỏ sót lời giải nếu độ sâu quá nhỏ
+IDS (Iterative Deepening Search)	Kết hợp BFS và DFS (tăng dần độ sâu)	Đảm bảo tìm lời giải tối ưu và tiết kiệm bộ nhớ	Tốn thời gian do lặp lại nhiều tầng tìm kiếm
+🔹 2. Nhóm thuật toán heuristic (dựa trên hàm đánh giá)
+Thuật toán	Hàm đánh giá	Ưu điểm	Nhược điểm
+Greedy Best-First Search	Chọn trạng thái có h(n) nhỏ nhất	Nhanh, hướng đích	Không đảm bảo tối ưu, dễ rơi vào cục bộ
+A*	Kết hợp f(n) = g(n) + h(n)	Cân bằng giữa chi phí và heuristic, tối ưu nếu h tốt	Tốn bộ nhớ khi không gian tìm kiếm lớn
+Hill Climbing	Cải thiện dần theo hướng giảm h(n)	Đơn giản, ít bộ nhớ	Dễ mắc kẹt tại cực trị địa phương, không đảm bảo lời giải
+🔹 3. Nhóm thuật toán tối ưu hóa và tiến hóa
+Thuật toán	Cơ chế	Ưu điểm	Nhược điểm
+Beam Search	Giữ lại k trạng thái tốt nhất ở mỗi bước	Giảm không gian tìm kiếm, nhanh	Có thể bỏ lỡ lời giải đúng nếu loại bỏ sớm
+Genetic Algorithm	Dựa trên tiến hóa tự nhiên (lai ghép, đột biến)	Khám phá không gian lớn, có thể thoát cục bộ	Kết quả không ổn định, phụ thuộc tham số
+🔹 4. Nhóm thuật toán ràng buộc
+Thuật toán	Cơ chế	Ưu điểm	Nhược điểm
+Backtracking	Dò từng lựa chọn, quay lui khi sai	Đảm bảo tìm được lời giải đúng	Tốc độ chậm khi không có heuristic
+Forward Checking	Loại bỏ sớm giá trị không hợp lệ trong miền	Giảm số nhánh cần duyệt, nhanh hơn backtracking	Cài đặt phức tạp hơn
+🔹 5. Thuật toán quan sát một phần (Partial Observation)
+
+Dành cho trường hợp đã biết trước một phần vị trí quân hậu.
+
+Giúp giảm không gian tìm kiếm, nhưng không linh hoạt nếu dữ liệu đầu vào bị sai.
+
+⚖️ Tổng kết hiệu năng
+Thuật toán	Độ phức tạp thời gian (ước lượng)	Hiệu quả thực tế	Khả năng tìm lời giải
+DFS	O(b^d)	Nhanh, dễ rơi vào nhánh sai	Có
+BFS	O(b^d)	Chậm, tốn bộ nhớ	Có
+UCS	O(b^d)	Trung bình	Có
+DLS	O(b^l)	Tùy giới hạn độ sâu	Có thể không
+IDS	O(b^d)	Tốt, ổn định	Có
+Greedy	O(b·logb)	Rất nhanh	Có thể không
+A*	O(b^d)	Cân bằng, hiệu quả	Có
+Hill Climbing	O(n²)	Nhanh, không ổn định	Không luôn
+Beam	O(k·b)	Nhanh, thiếu tối ưu	Có thể
+Genetic	O(g·p)	Chậm hơn nhưng đa dạng	Có thể
+Backtracking	O(N!)	Chính xác, chậm	Có
+Forward Checking	< O(N!)	Nhanh hơn Backtracking	Có
+🧠 Kết luận chung
+
+Thuật toán A* và Forward Checking cho kết quả ổn định và hiệu quả nhất trong bài toán 8 quân hậu.
+
+Greedy và Hill Climbing chạy nhanh nhưng có thể dừng ở trạng thái không tối ưu.
+
+Genetic Algorithm thú vị vì tính ngẫu nhiên, tuy nhiên khó kiểm soát kết quả.
+
+Backtracking tuy chậm nhưng đảm bảo lời giải chính xác tuyệt đối.
+
